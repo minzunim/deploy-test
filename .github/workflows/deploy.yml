@@ -31,7 +31,7 @@ jobs:
         run: yarn build
       
       - name: 📦 빌드한 코드를 압축
-        run: zip -r dist.zip ./dist
+        run: zip -r dist.zip ./dist ./scripts ./appspec.yml ./package.json
 
       - name: 🌎 AWS에 접속
         uses: aws-actions/configure-aws-credentials@v1
