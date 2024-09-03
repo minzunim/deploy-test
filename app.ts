@@ -3,7 +3,7 @@ import express, { Request, Response } from 'express';
 const app = express();
 
 app.get('/', (req: Request, res: Response) => {
-    res.send("<h1>Happy Tuesday!!!</h1>");
+    res.send("<h1>Happy Tuesday 🤣</h1>");
 });
 
 app.listen(3000, () => {
