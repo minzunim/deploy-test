@@ -1,5 +1,5 @@
 #!/bin/bash
-REPOSITORY=/home/ubuntu/deploy-test/dist
+REPOSITORY=/home/ubuntu/deploy-test/build
 
 cd $REPOSITORY
 
