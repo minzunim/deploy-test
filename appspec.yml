@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/deploy-test/dist
+    destination: /home/ubuntu/deploy-test/build
     overwrite: yes
 
 permissions:
