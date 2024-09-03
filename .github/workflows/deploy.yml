@@ -1,0 +1,31 @@
+name: deploy
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [16.14.1]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - name: ✅ 체크아웃 source code.
+        uses: actions/checkout@v4
+
+      - name: ⚙️ ${{ matrix.node-version }} 버전의 노드로 세팅합니다.
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: ✨ 패키지 설치
+        working-directory: ./
+        run: yarn
+        
+      - name: ✨ 빌드 과정을 시작
+        working-directory: ./
+        run: yarn build
